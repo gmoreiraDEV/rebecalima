@@ -1,5 +1,5 @@
-import { Fragment } from "react";
-import { Box, Flex, Heading } from "@chakra-ui/react";
+import { Fragment, ReactElement } from "react";
+import { Box, Flex, FlexProps, forwardRef, Heading } from "@chakra-ui/react";
 import ServiceItem from "./ServiceItem";
 
 const services = [
@@ -21,9 +21,7 @@ const services = [
   },
 ];
 
-interface Props {}
-
-const Services = (props: Props) => {
+const Services = forwardRef<FlexProps, "div">((props, ref): ReactElement => {
   return (
     <Flex
       height='1200px'
@@ -70,6 +68,6 @@ const Services = (props: Props) => {
       </Flex>
     </Flex>
   );
-};
+});
 
 export default Services;
