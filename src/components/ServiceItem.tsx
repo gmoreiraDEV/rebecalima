@@ -1,4 +1,5 @@
-import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import { ReactElement } from "react";
+import { Flex, Image, Text } from "@chakra-ui/react";
 
 interface Props {
   title: String;
@@ -6,7 +7,6 @@ interface Props {
   alignment?: String;
   picture?: String;
   video?: String;
-  icon: String;
 }
 
 const ServiceItem = ({
@@ -15,22 +15,22 @@ const ServiceItem = ({
   alignment,
   picture,
   video,
-  icon,
-}: Props) => {
+}: Props): ReactElement => {
   return (
     <Flex
       flexDirection={alignment === "right" || undefined ? "row-reverse" : "row"}
       justifyContent={"space-around"}
       alignItems={"center"}
       position={"relative"}
-      overflow={"visible"}>
+      margin={8}>
       <Flex
         direction={"column"}
         justifyContent={"center"}
         alignItems={
           alignment === "right" || undefined ? "flex-end" : "flex-start"
         }
-        maxWidth={"50%"}>
+        maxWidth={"50%"}
+        color={"brand.pink"}>
         <Text as={"h3"} fontWeight={"bold"} fontSize={"2xl"}>
           {title}
         </Text>

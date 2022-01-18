@@ -1,5 +1,5 @@
 import { Fragment, ReactElement } from "react";
-import { Box, Flex, FlexProps, forwardRef, Heading } from "@chakra-ui/react";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 import ServiceItem from "./ServiceItem";
 
 const services = [
@@ -21,16 +21,18 @@ const services = [
   },
 ];
 
-const Services = forwardRef<FlexProps, "div">((props, ref): ReactElement => {
+const Services = (props): ReactElement => {
   return (
     <Flex
-      height='1200px'
+      {...props}
       width={"100%"}
       flexDirection={"column"}
       justifyContent={"space-evenly"}
       alignItems={"center"}
-      id='servicos'>
-      <Heading size={"4xl"}>Serviços</Heading>
+      margin={4}>
+      <Heading size={"4xl"} color={"brand.pink"} marginTop={8}>
+        Serviços
+      </Heading>
       <Flex
         flex={1}
         width={"100%"}
@@ -60,7 +62,6 @@ const Services = forwardRef<FlexProps, "div">((props, ref): ReactElement => {
                 alignment={alignment}
                 video={video}
                 picture={picture}
-                icon={icon}
               />
             </Fragment>
           );
@@ -68,6 +69,6 @@ const Services = forwardRef<FlexProps, "div">((props, ref): ReactElement => {
       </Flex>
     </Flex>
   );
-});
+};
 
 export default Services;
