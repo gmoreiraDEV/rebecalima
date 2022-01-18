@@ -40,7 +40,7 @@ const Navigation = (): ReactElement => {
               letterSpacing={2}
               _hover={{
                 borderBottom: "2px",
-                borderBottomColor: "brand.salmon",
+                borderBottomColor: "brand.salmon.500",
               }}>
               <Link
                 href={link}
@@ -64,7 +64,7 @@ const Navigation = (): ReactElement => {
               letterSpacing={2}
               _hover={{
                 borderBottom: "2px",
-                borderBottomColor: "brand.salmon",
+                borderBottomColor: "brand.salmon.500",
               }}
               onClick={() => push(`${link}`)}>
               {title}
