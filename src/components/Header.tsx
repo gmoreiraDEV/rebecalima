@@ -1,16 +1,16 @@
 import { useRouter } from "next/router";
-import { Flex, Box, Heading, Text, Image } from "@chakra-ui/react";
+import { Flex, Box, Heading, Text, Button, Image } from "@chakra-ui/react";
 
-import Button from "./Button";
 import Logo from "./Logo";
 import Navigation from "./Navigation";
 import SocialContact from "./SocialContact";
+import { ReactElement } from "react";
 
 interface Props {
   slider: boolean;
 }
 
-const Header = ({ slider }: Props) => {
+const Header = ({ slider }: Props): ReactElement => {
   const { push } = useRouter();
   return (
     <Flex
@@ -58,16 +58,19 @@ const Header = ({ slider }: Props) => {
             <Text
               maxW='350px'
               color='white'
+              letterSpacing={2}
+              marginTop='4'
               textAlign='center'
               textShadow={
                 "-0.5px 0 white, 0 0.5px white, 0.5px 0 white, 0 -0.5px white"
-              }
-              letterSpacing={2}
-              marginTop='4'>
+              }>
               Crio refeições personalizadas para sua rotina
             </Text>
-            <Button marginTop={8} onClick={() => push("#agenda")}>
-              AGENDAR SERVIÇOS
+            <Button
+              variant={"withBorder"}
+              marginTop={8}
+              onClick={() => push("#agenda")}>
+              RESERVAR ATENDIMENTO
             </Button>
           </Flex>
           <Flex maxW='500px'>
