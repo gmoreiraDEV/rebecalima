@@ -21,20 +21,25 @@ const dataIcons = [
   },
 ];
 
-const SocialContact = (): ReactElement => {
+interface Props {
+  dark?: Boolean;
+}
+
+const SocialContact = (props: Props): ReactElement => {
   const { push } = useRouter();
+  const { dark } = props;
   return (
-    <Flex justifyContent='space-around' alignItems='center' gap={2}>
+    <Flex {...props} justifyContent='space-around' alignItems='center' gap={2}>
       {dataIcons.map(({ title, icon, link }) => (
         <IconButton
           key={title}
           aria-label={title}
           icon={icon}
           background='transparent'
-          color='white'
+          color={dark ? "brand.pink" : "white"}
           fontSize='35px'
           _hover={{
-            color: "brand.salmon.500",
+            color: dark ? "brand.blue" : "brand.salmon.500",
           }}
           _focus={{
             boxShadow: "none",
