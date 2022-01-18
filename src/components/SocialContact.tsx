@@ -23,13 +23,18 @@ const dataIcons = [
 
 interface Props {
   dark?: Boolean;
+  margin: number;
 }
 
 const SocialContact = (props: Props): ReactElement => {
   const { push } = useRouter();
-  const { dark } = props;
+  const { dark, margin } = props;
   return (
-    <Flex {...props} justifyContent='space-around' alignItems='center' gap={2}>
+    <Flex
+      margin={margin}
+      justifyContent='space-around'
+      alignItems='center'
+      gap={2}>
       {dataIcons.map(({ title, icon, link }) => (
         <IconButton
           key={title}
