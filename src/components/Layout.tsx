@@ -1,5 +1,6 @@
 import { Flex } from "@chakra-ui/react";
 import React, { ReactElement } from "react";
+import Footer from "./Footer";
 import Header from "./Header";
 
 interface Props {
@@ -16,6 +17,8 @@ export default function Layout({ children, slider }: Props): ReactElement {
       alignItems={"center"}>
       <Header slider={slider} />
       {children}
+      <Footer />
     </Flex>
   );
 }
+3;
