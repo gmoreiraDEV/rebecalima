@@ -23,7 +23,7 @@ const dataIcons = [
 
 interface Props {
   dark?: Boolean;
-  margin: number;
+  margin?: number;
 }
 
 const SocialContact = (props: Props): ReactElement => {
