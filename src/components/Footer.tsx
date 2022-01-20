@@ -2,9 +2,7 @@ import { ReactElement } from "react";
 import { Flex, Text } from "@chakra-ui/react";
 import SocialContact from "./SocialContact";
 
-interface Props {}
-
-const Footer = (props: Props): ReactElement => {
+const Footer = (): ReactElement => {
   return (
     <Flex
       as={"footer"}

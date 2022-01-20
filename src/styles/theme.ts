@@ -1,6 +1,6 @@
 import { extendTheme } from "@chakra-ui/react";
 
-import { ButtonStyles as Button } from "./buttonStyles";
+import { Button } from "./button";
 
 const defaultTheme = {
   colors: {
@@ -23,9 +23,7 @@ const defaultTheme = {
     heading: "Shelby",
     body: "Beloved Sans",
   },
-  components: {
-    Button,
-  },
+  components: { Button },
 };
 
 const theme = extendTheme(defaultTheme);

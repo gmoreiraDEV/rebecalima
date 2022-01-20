@@ -1,4 +1,4 @@
-export const ButtonStyles = {
+export const Button = {
   baseStyle: {},
   sizes: {},
   variants: {

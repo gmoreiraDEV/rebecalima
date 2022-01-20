@@ -4,9 +4,11 @@ import { Flex, Button, Heading, Text } from "@chakra-ui/react";
 
 const Schedule = (props): ReactElement => {
   const { push } = useRouter();
+  const { ...rest } = props;
+
   return (
     <Flex
-      {...props}
+      {...rest}
       width={"100%"}
       direction={"column"}
       justifyContent={"center"}
@@ -27,7 +29,6 @@ const Schedule = (props): ReactElement => {
           width={"300px"}
           marginBottom={4}
           variant={"withBorderDark"}
-          // iconButton={`personChefIcon.svg`}
           onClick={() => push("/agenda/personalChef")}>
           Personal Chef
         </Button>

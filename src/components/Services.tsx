@@ -22,9 +22,10 @@ const services = [
 ];
 
 const Services = (props): ReactElement => {
+  const { ...rest } = props;
   return (
     <Flex
-      {...props}
+      {...rest}
       width={"100%"}
       flexDirection={"column"}
       justifyContent={"space-evenly"}
