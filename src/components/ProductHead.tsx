@@ -1,6 +1,5 @@
 import { ReactElement } from "react";
-import { Box, Flex, Image } from "@chakra-ui/react";
-import PersonalChefIcon from "@icons/PersonalChefIcon";
+import { Flex, Icon, Image } from "@chakra-ui/react";
 
 const ProductHead = (props): ReactElement => {
   const { product, icon } = props;
@@ -8,6 +7,8 @@ const ProductHead = (props): ReactElement => {
     <Flex zIndex={0}>
       <Flex
         position='relative'
+        justifyContent={"center"}
+        alignItems={"center"}
         p={4}
         bg='white'
         color='brand.pink'
@@ -25,7 +26,7 @@ const ProductHead = (props): ReactElement => {
           borderColor: "brand.pink",
           zIndex: -1,
         }}>
-        <Image color={"brand.pink"} src={icon} alt={product} />
+        {icon}
         {product}
       </Flex>
     </Flex>
