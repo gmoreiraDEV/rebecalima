@@ -1,8 +1,9 @@
 import { ReactElement } from "react";
-import { Flex, Icon, Image } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 
 const ProductHead = (props): ReactElement => {
   const { product, icon } = props;
+
   return (
     <Flex zIndex={0}>
       <Flex
