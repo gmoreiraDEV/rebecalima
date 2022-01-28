@@ -1,11 +1,11 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import Fonts from "src/theme/Fonts";
+import GlobalStyles from "@theme/GlobalStyles";
 import theme from "src/theme";
 
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider resetCSS={true} theme={theme}>
-      <Fonts />
+      <GlobalStyles />
       <Component {...pageProps} />
     </ChakraProvider>
   );
