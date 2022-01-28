@@ -6,7 +6,7 @@ import { Flex, Link, Button } from "@chakra-ui/react";
 const navigationLinks = [
   {
     title: "Início",
-    link: "#home",
+    link: "/",
     button: true,
   },
   {
