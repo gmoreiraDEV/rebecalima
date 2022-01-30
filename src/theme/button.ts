@@ -31,7 +31,7 @@ export const Button = {
     withBorderDark: {
       position: "relative",
       bg: "white",
-      color: "brand.pink",
+      color: "brand.red",
       fontWeight: "bold",
       textAlign: "center",
       rounded: "0",
@@ -52,6 +52,27 @@ export const Button = {
       },
       _focus: {
         boxShadow: "none",
+      },
+    },
+    button: {
+      position: "relative",
+      bg: "brand.red",
+      color: "white",
+      fontFamily: "Roboto",
+      fontWeight: "normal",
+      letterSpacing: "5px",
+      textTransform: "uppercase",
+      textAlign: "center",
+      rounded: "0",
+      outline: "unset",
+      textShadow: `-0.5px 0 #D8A492, 0 0.5px #D8A492, 0.5px 0 #D8A492, 0 -0.5px #D8A492`,
+
+      _focus: {
+        boxShadow: "none",
+      },
+
+      _hover: {
+        background: "brand.pink",
       },
     },
   },
