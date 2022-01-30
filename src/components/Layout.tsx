@@ -3,7 +3,7 @@ import React, { ReactElement } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 
-export default function Layout(props): ReactElement {
+const Layout = (props): ReactElement => {
   const { slider, children, ...rest } = props;
 
   return (
@@ -18,5 +18,7 @@ export default function Layout(props): ReactElement {
       <Footer />
     </Flex>
   );
-}
+};
 3;
+
+export default Layout;
