@@ -16,8 +16,10 @@ const GlobalStyles = (): ReactElement => {
         }
         /* App fit Height */ 
         html, body, #__next {
+          min-width: 100vw;
           min-height: 100vh;
           display: flex;
+          align-items: flex-start;
           flex: 1;
         }
         #__next {
@@ -25,8 +27,14 @@ const GlobalStyles = (): ReactElement => {
         }
         #__next > * {
           flex: 1;
+          min-height: 100vh;
+          justify-content: space-between;
         }
         /* ./App fit Height */ 
+
+        svg {
+          display: inline-block;
+        }
         `}
     />
   );
