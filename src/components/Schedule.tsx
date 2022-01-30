@@ -29,13 +29,13 @@ const Schedule = (props): ReactElement => {
           width={"300px"}
           marginBottom={4}
           variant={"withBorderDark"}
-          onClick={() => push("/agenda/personal-chef")}>
+          onClick={() => push("/login?next=personal-chef")}>
           Personal Chef
         </Button>
         <Button
           width={"300px"}
           variant={"withBorderDark"}
-          onClick={() => push("/agenda/personal-snack")}>
+          onClick={() => push("/login?next=personal-snack")}>
           Personal Snack
         </Button>
       </Flex>

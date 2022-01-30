@@ -1,12 +1,20 @@
 import React, { ReactElement } from "react";
 import { useRouter } from "next/router";
-import { Heading, Flex, Button, IconButton } from "@chakra-ui/react";
+import {
+  Heading,
+  Flex,
+  Button,
+  IconButton,
+  useBoolean,
+} from "@chakra-ui/react";
 import Layout from "@components/Layout";
 import ProductHead from "@components/ProductHead";
 import { PersonalChefIcon, PersonalSnackIcon } from "@theme/Icons";
 import { FaExchangeAlt } from "react-icons/fa";
 import Login from "@components/Login";
 import Register from "@components/Register";
+import LoginWithSocial from "@components/LoginWithSocial";
+import SelectDayService from "@components/SelectDayService";
 
 interface Props {}
 
@@ -25,13 +33,11 @@ const products = [
 
 export default function Product(props: Props): ReactElement {
   const { push, query } = useRouter();
-  const [productOption, setProductOption] = React.useState(false);
+  const [productOption, setProductOption] = useBoolean(false);
   const isPage = (products) => products.path === query.product;
-  const setDialogProduct = () => {
-    setProductOption(() => !productOption);
-  };
+
   const changeProduct = (path) => {
-    setProductOption(() => !productOption), push(`/agenda/${path}`);
+    setProductOption.toggle(), push(`/agenda/${path}`);
   };
 
   return (
@@ -48,7 +54,7 @@ export default function Product(props: Props): ReactElement {
           _focus={{
             outline: "none",
           }}
-          onClick={setDialogProduct}
+          onClick={setProductOption.toggle}
         />
       </Heading>
 
@@ -70,18 +76,16 @@ export default function Product(props: Props): ReactElement {
       ) : (
         products.filter(isPage).map(({ title, icon }) => {
           return (
-            <>
-              <ProductHead
-                key={title}
-                product={title}
-                icon={icon}
-                changeProduct={changeProduct}
-              />
-              <Flex padding={4} margin={4}>
-                <Login />
-                <Register />
-              </Flex>
-            </>
+            <Flex
+              key={title}
+              flexDirection={"column"}
+              width={"100%"}
+              minHeight={"300px"}
+              justifyContent={"space-between"}
+              alignItems={"center"}>
+              <ProductHead product={title} icon={icon} />
+              <SelectDayService />
+            </Flex>
           );
         })
       )}
